@@ -5,7 +5,7 @@
   import { defineAsyncComponent } from 'vue'
 
 const AsyncComp = defineAsyncComponent(() =>
-  import('../components/MovieLIst.vue')
+  import('../components/MovieList.vue')
 )
   
 export default {
