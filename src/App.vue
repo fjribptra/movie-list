@@ -1,8 +1,13 @@
 <script>
   import {getMovieList, getMovieBySearch} from './api'
   import MyNavbar from '../components/MyNavbar.vue'
-  import MovieList from '../components/MovieLIst.vue'
+  import LoadingVue from '../components/Loading.vue'
+  import { defineAsyncComponent } from 'vue'
 
+const AsyncComp = defineAsyncComponent(() =>
+  import('../components/MovieLIst.vue')
+)
+  
 export default {
         data() {
             return {
@@ -26,7 +31,8 @@ export default {
         },
         components: {
           MyNavbar,
-          MovieList
+          AsyncComp,
+          LoadingVue
         }
     }
 </script>
@@ -34,7 +40,14 @@ export default {
 <template>
   <MyNavbar @meth="search"/>
   <div class="movie-container">
-    <MovieList :movies="movies"/>
+    <Suspense>
+      <template #default>
+        <AsyncComp :movies="movies"/>
+      </template>
+      <template #fallback>
+        <LoadingVue/>
+      </template>
+    </Suspense>
   </div>
 </template>
 

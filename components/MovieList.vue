@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    props: ['movies']
+  props: ['movies']
 }
 </script>
 
@@ -23,7 +23,6 @@ export default {
   flex-direction: column;
   gap: 10px;
   background-color: antiquewhite;
-  /* padding: 1em; */
 }
 
 img {
