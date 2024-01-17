@@ -56,7 +56,7 @@ img {
     }
 
     img {
-        width: 140px;
+        width: 149px;
     }
 }
 </style>

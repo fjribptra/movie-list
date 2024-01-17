@@ -1,15 +1,32 @@
 <template>
   <header>
-    <h1>MOVIE LIST MANIA</h1>
-    <input type="text" placeholder="Enter the movie name ..." @change="$emit('meth', $event)" />
+    <h1>
+      <router-link class="link" class-active="active" to="/">Movie List Mania</router-link>
+    </h1>
+    <input type="text" placeholder="Enter the movie name ..." @change="push($event)" />
   </header>
 </template>
 
 <script>
-export default {};
+export default {
+  setup() {
+    
+  },
+  methods: {
+    push(e) {
+      console.log(e.target.value)
+      this.$router.push(`/search/${e.target.value}`)
+    }
+  },
+};
 </script>
 
 <style scoped>
+.link {
+  text-decoration: none;
+  color: white;
+}
+
 header {
   background-color: #0d1821;
   padding: 2em 4em;
@@ -24,7 +41,7 @@ header {
 }
 
 h1 {
-  color: white;
+  text-decoration: none;
   font-size: 1.5rem;
 }
 

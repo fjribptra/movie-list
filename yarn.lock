@@ -299,7 +299,14 @@ vue-demi@>=0.14.5:
   resolved "https://registry.npmjs.org/vue-demi/-/vue-demi-0.14.6.tgz"
   integrity sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==
 
-"vue@^2.6.14 || ^3.3.0", "vue@^3.0.0-0 || ^2.6.0", vue@^3.2.25, vue@^3.3.11, vue@3.4.13:
+vue-router@^4.2.5:
+  version "4.2.5"
+  resolved "https://registry.npmjs.org/vue-router/-/vue-router-4.2.5.tgz"
+  integrity sha512-DIUpKcyg4+PTQKfFPX88UWhlagBEBEfJ5A8XDXRJLUnZOvcpMF8o/dnL90vpVkGaPbjvXazV/rC1qBKrZlFugw==
+  dependencies:
+    "@vue/devtools-api" "^6.5.0"
+
+"vue@^2.6.14 || ^3.3.0", "vue@^3.0.0-0 || ^2.6.0", vue@^3.2.0, vue@^3.2.25, vue@^3.3.11, vue@3.4.13:
   version "3.4.13"
   resolved "https://registry.npmjs.org/vue/-/vue-3.4.13.tgz"
   integrity sha512-FE3UZ0p+oUZTwz+SzlH/hDFg+XsVRFvwmx0LXjdD1pRK/cO4fu5v6ltAZji4za4IBih3dV78elUK3di8v3pWIg==
