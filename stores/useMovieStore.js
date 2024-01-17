@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import { getMovieList } from '../src/api'
+import { getMovieList } from '../src/libs/api'
 import { ref } from 'vue'
 
 export const useMovieStore = defineStore('counter', () => {

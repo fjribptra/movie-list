@@ -14,8 +14,9 @@ export default {
   },
   methods: {
     push(e) {
-      console.log(e.target.value)
-      this.$router.push(`/search/${e.target.value}`)
+      const keyword = e.target.value.toLowerCase()
+      if(keyword.length < 3) return
+      this.$router.push(`/search/${keyword}`)
     }
   },
 };
@@ -50,6 +51,7 @@ input {
   max-width: 300px;
   font-weight: bold;
   padding: 1em 1.5em;
+  background-color: white;
 }
 
 @media screen and (max-width: 576px) {

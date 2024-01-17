@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@phosphor-icons/vue": "^2.1.6",
     "axios": "^1.6.5",
     "dotenv": "^16.3.1",
     "pinia": "^2.1.7",

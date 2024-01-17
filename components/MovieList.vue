@@ -1,15 +1,26 @@
 <template>
-    <div v-for="mv in movies" class="movie-wrapper" :key="mv.id">
+    <router-link class-active="active" :to="'/details/'+ mv.id" v-for="mv in movies" class="movie-wrapper" :key="mv.id">
       <div class="movie-title">{{ mv.title }}</div>
       <img :src="`https://image.tmdb.org/t/p/w200${mv.poster_path}`" alt="...">
-      <div class="movie-date">{{mv.release_date}}</div>
-      <div class="movie-rating">{{mv.vote_average}}</div>
-    </div>
+      <div class="movie-date">
+        <PhCalendarBlank :size="20" color="#121212" />
+        {{mv.release_date}}
+      </div>
+      <div class="movie-rating">
+        <PhStar :size="20" />
+        {{mv.vote_average}}
+      </div>
+    </router-link>
 </template>
 
 <script>
+import {PhCalendarBlank, PhStar} from '@phosphor-icons/vue'
 export default {
-  props: ['movies']
+  props: ['movies'],
+  components: {
+    PhStar,
+    PhCalendarBlank
+  }
 }
 </script>
 
@@ -23,6 +34,8 @@ export default {
   flex-direction: column;
   gap: 10px;
   background-color: antiquewhite;
+  color: black;
+  text-decoration: none;
 }
 
 img {
@@ -37,11 +50,22 @@ img {
   font-weight: bold;
 }
 
+.movie-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
 .movie-rating {
   color: red;
   font-style: italic;
   font-weight: bolder;
   text-decoration: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 @media screen and (max-width: 576px) {

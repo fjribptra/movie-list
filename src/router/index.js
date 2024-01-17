@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomePage from '../views/HomePage.vue'
 import SearchPage from '../views/SearchPage.vue'
+import DetailPage from '../views/DetailPage.vue'
 import NotFoundPage from '../views/NotFoundPage.vue'
 
 const routes = [
@@ -13,6 +14,11 @@ const routes = [
         path: '/search/:name', 
         name: "Search",
         component: SearchPage 
+    },
+    {
+        path: '/details/:id', 
+        name: "Detail",
+        component: DetailPage 
     },
     {
         path: '/:pathMatch(.*)*', 

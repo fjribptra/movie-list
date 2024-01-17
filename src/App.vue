@@ -1,7 +1,7 @@
 <script>
   import MyNavbar from '../components/MyNavbar.vue'
   import LoadingVue from '../components/Loading.vue'
-import { getMovieBySearch } from './api'
+import { getMovieBySearch } from './libs/api'
   
 export default {
   methods: {
@@ -19,11 +19,7 @@ export default {
 </script>
 
 <template>
-  <MyNavbar @meth="search"/>
-  <!-- <router-link to="/about">About</router-link> -->
-  
-      <router-view/>
-
-
+    <MyNavbar @meth="search"/>
+    <router-view/>
 </template>
 
