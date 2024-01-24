@@ -3,12 +3,21 @@
     <h1>
       <router-link class="link" class-active="active" to="/">Movie List Mania</router-link>
     </h1>
-    <input type="text" placeholder="Enter the movie name ..." @change="push($event)" />
+    <div class="search-wrapper">
+      <input type="text" placeholder="Enter the movie name ..." @change="push($event)" />
+      <button @click="push($event)">
+        <ph-magnifying-glass :size="32"/>
+      </button>
+    </div>
   </header>
 </template>
 
 <script>
+import {PhMagnifyingGlass} from '@phosphor-icons/vue'
 export default {
+  components: {
+    PhMagnifyingGlass
+  },
   methods: {
     push(e) {
       const keyword = e.target.value.toLowerCase()
@@ -48,6 +57,26 @@ input {
   max-width: 300px;
   font-weight: bold;
   padding: 1em 1.5em;
+  background-color: white;
+}
+
+.search-wrapper {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  padding: 0 1em;
+  cursor: pointer;
+  background-color: lightgreen;
+  color: white;
+  font-weight: bolder;
+  transition: .3s all;
+}
+
+button:hover {
+  color: black;
   background-color: white;
 }
 
