@@ -1,7 +1,7 @@
 <template>
     <router-link class-active="active" :to="'/details/'+ mv.id" v-for="mv in movies" class="movie-wrapper" :key="mv.id">
       <div class="movie-title">{{ mv.title }}</div>
-      <img :src="`https://image.tmdb.org/t/p/w200${mv.poster_path}`" alt="...">
+      <img :src="`https://image.tmdb.org/t/p/w500${mv.poster_path}`" alt="...">
       <div class="movie-date">
         <PhCalendarBlank :size="20" color="#121212" />
         {{mv.release_date}}

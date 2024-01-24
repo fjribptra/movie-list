@@ -1,7 +1,7 @@
 <template>
         <div class="wrapper">
             <div class="image-wrapper">
-                <img :src="`https://image.tmdb.org/t/p/w200${detailMovie.poster_path}`" alt="..">
+                <img :src="`https://image.tmdb.org/t/p/w500${detailMovie.poster_path}`" alt="..">
 
             </div>
             <div class="detail-wrapper">
