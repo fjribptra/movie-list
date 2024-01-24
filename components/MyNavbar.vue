@@ -9,9 +9,6 @@
 
 <script>
 export default {
-  setup() {
-    
-  },
   methods: {
     push(e) {
       const keyword = e.target.value.toLowerCase()

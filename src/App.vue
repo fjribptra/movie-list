@@ -1,7 +1,7 @@
 <script>
   import MyNavbar from '../components/MyNavbar.vue'
   import LoadingVue from '../components/Loading.vue'
-import { getMovieBySearch } from './libs/api'
+  import { getMovieBySearch } from './libs/api'
   
 export default {
   methods: {
