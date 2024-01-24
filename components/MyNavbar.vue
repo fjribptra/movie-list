@@ -21,7 +21,7 @@ export default {
   methods: {
     push(e) {
       const keyword = e.target.value.toLowerCase()
-      if(keyword.length < 3) return
+      if(keyword.length < 3 || keyword.trim() === "") return
       this.$router.push(`/search/${keyword}`)
     }
   },
