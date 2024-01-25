@@ -1,59 +1,66 @@
 <template>
     <Suspense>
       <template #default>
-        <div style="display: flex; flex-direction: column; gap:10px;">
-          <div class="movie-container">
-            <AsyncComp :movies="movies" />
-          </div>
-          <Pagination :page="page" @onPrev="prevPage" @onNext="nextPage"/>
+        <div style="padding: 0;">
+            <div class="wrapper">
+                <nav>
+                    <h3>Popular</h3>
+                    <router-link to="/popular">See all</router-link>
+                </nav>
+            </div>
+            <div class="movie-container" style="margin-top: 0;">
+                <AsyncComp :movies="movies" />
+            </div>
         </div>
       </template>
       <template #fallback>
-        <LoadingVue />
+        <div class="movie-container">
+            <LoadingVue />
+        </div>
       </template>
     </Suspense>
 </template>
 
 <script>
 import { getMovieList } from "../libs/api";
-import LoadingVue from "../../components/Loading.vue";
+import { scrollTop } from "../libs/scrollTop";
+import LoadingVue from "../components/Loading.vue";
 import { defineAsyncComponent } from "vue";
-import {useMovieStore} from '../../stores/useMovieStore';
-import Pagination from '../../components/Pagination.vue';
 
-const AsyncComp = defineAsyncComponent(() => import("../../components/MovieList.vue"));
+const AsyncComp = defineAsyncComponent(() => import("../components/MovieList.vue"));
 export default {
   data() {
     return {
       movies: [],
-      page: 1
     };
   },
   methods: {
-    async get() {
-      const lists = await getMovieList(this.page);
-      this.movies = lists;
+    async getPopularMovies() {
+      const popularMovies = await getMovieList(1);
+      this.movies = popularMovies;
     },
-    nextPage() {
-      this.page++
-    },
-    prevPage() {
-      this.page--
-    }
   },
   mounted() {
-    this.get();
+    this.getPopularMovies();
+    scrollTop();
   },
-  updated() {
-    this.get()
-  },
-
   components: {
     AsyncComp,
     LoadingVue,
-    Pagination
   },
 };
 </script>
 
+<style scoped>
+    .wrapper {
+        margin-top: 60px;
+        width: 100vw;
+        background-color: antiquewhite;
+    }   
 
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 1em 2em;
+    }
+</style>

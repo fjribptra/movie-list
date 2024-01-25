@@ -13,13 +13,12 @@
 
 <script>
 import { getMovieDetail } from "../libs/api";
-import {scrollTop} from "../libs/scrollTop"
-import LoadingVue from "../../components/Loading.vue";
-import MovieDetail from "../../components/MovieDetail.vue";
+import { scrollTop } from "../libs/scrollTop";
+import LoadingVue from "../components/Loading.vue";
 
 import { defineAsyncComponent } from "vue";
 
-const AsyncComp = defineAsyncComponent(() => import("../../components/MovieDetail.vue"));
+const AsyncComp = defineAsyncComponent(() => import("../components/MovieDetail.vue"));
 
 export default {
   data() {
@@ -41,7 +40,7 @@ export default {
   },
   mounted() {
     this.getDetail();
-    scrollTop()
+    scrollTop();
   },
 };
 </script>

@@ -2,7 +2,7 @@
   <div class="movie-container">
     <Suspense>
       <template #default>
-          <AsyncComp :movies="movies" />
+        <AsyncComp :movies="movies" />
       </template>
       <template #fallback>
         <LoadingVue />
@@ -14,10 +14,10 @@
 <script>
 import { getMovieBySearch } from "../libs/api";
 import { scrollTop } from "../libs/scrollTop";
-import LoadingVue from "../../components/Loading.vue";
+import LoadingVue from "../components/Loading.vue";
 import { defineAsyncComponent } from "vue";
 
-const AsyncComp = defineAsyncComponent(() => import("../../components/MovieList.vue"));
+const AsyncComp = defineAsyncComponent(() => import("../components/MovieList.vue"));
 export default {
   data() {
     return {
@@ -33,12 +33,12 @@ export default {
   },
   mounted() {
     this.search();
-    scrollTop()
-},
-beforeUpdate() {
+    scrollTop();
+  },
+  beforeUpdate() {
     this.parameter = this.$route.params.name;
-},
-updated() {
+  },
+  updated() {
     this.search();
   },
   components: {
