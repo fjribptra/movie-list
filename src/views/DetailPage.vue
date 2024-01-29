@@ -54,6 +54,6 @@ div {
   flex-wrap: wrap;
   gap: 20px;
   margin-top: 20px;
-  background-color: antiquewhite;
+  background-color: #C2EABD;
 }
 </style>

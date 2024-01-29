@@ -35,7 +35,7 @@ export default {
 }
 
 header {
-  background-color: #0d1821;
+  background-color: #011936;
   padding: 2em 4em;
   display: flex;
   justify-content: space-between;
@@ -44,6 +44,7 @@ header {
   top: 0;
   right: 0;
   left: 0;
+  z-index: 999;
   gap: 20px;
 }
 

@@ -33,7 +33,7 @@ export default {
   align-items: center;
   flex-direction: column;
   gap: 10px;
-  background-color: antiquewhite;
+  background-color: #C2EABD;
   color: black;
   text-decoration: none;
 }

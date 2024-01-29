@@ -96,9 +96,10 @@ export default {
     button {
         border: none;
         padding: 1em;
-        background-color: green;
+        background-color: black;
         font-weight: bolder;
         color: white;
+        cursor: pointer;
     }
 
     @media screen and (max-width: 576px) {
