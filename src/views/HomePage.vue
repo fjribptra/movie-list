@@ -9,12 +9,7 @@
                 <router-link to="/popular" active-class="active" class="cta-button">See the most popular movies</router-link>
               </div>
             </main>
-            <div class="wrapper">
-                <nav>
-                    <h3>Popular</h3>
-                    <router-link active-class="active" class="link" to="/popular">See all</router-link>
-                </nav>
-            </div>
+            <Header title="Popular" navigation="See all" navigationHref="/popular" />
             <div class="movie-container" style="margin-top: 0;">
                 <AsyncComp :movies="movies" />
             </div>
@@ -33,6 +28,7 @@ import { getMovieList } from "../libs/api";
 import { scrollTop } from "../libs/scrollTop";
 import LoadingVue from "../components/Loading.vue";
 import { defineAsyncComponent } from "vue";
+import Header from "../components/Header.vue";
 
 const AsyncComp = defineAsyncComponent(() => import("../components/MovieList.vue"));
 export default {
@@ -54,7 +50,9 @@ export default {
   components: {
     AsyncComp,
     LoadingVue,
-  }
+    Header,
+    Header
+}
 };
 </script>
 
@@ -90,16 +88,7 @@ export default {
     main h1 {
         font-size: 3rem;
     }
-    .wrapper {
-        width: 100vw;
-        background-color: #465362;
-        color: #fff;
-    }   
-
-    .link {
-      text-decoration: none;
-      color: #C2EABD;
-    }
+    
 
     .cta-button {
       width: 270px;
@@ -118,12 +107,6 @@ export default {
     .cta-button:hover {
       background-color: white;
       color: #1ca00b;
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        padding: 1em 2em;
     }
 
     @media (max-width: 576px) {

@@ -23,6 +23,7 @@ export default {
       const keyword = e.target.value.toLowerCase()
       if(keyword.length < 3 || keyword.trim() === "") return
       this.$router.push(`/search/${keyword}`)
+      e.target.value = ""
     }
   },
 };

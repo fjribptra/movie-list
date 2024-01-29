@@ -1,5 +1,6 @@
 <template>
   <div class="movie-container">
+    <Header :title="`Searching for ${parameter} ...`"/>
     <Suspense>
       <template #default>
         <AsyncComp :movies="movies" />
@@ -16,6 +17,7 @@ import { getMovieBySearch } from "../libs/api";
 import { scrollTop } from "../libs/scrollTop";
 import LoadingVue from "../components/Loading.vue";
 import { defineAsyncComponent } from "vue";
+import Header from "../components/Header.vue";
 
 const AsyncComp = defineAsyncComponent(() => import("../components/MovieList.vue"));
 export default {
@@ -44,6 +46,7 @@ export default {
   components: {
     AsyncComp,
     LoadingVue,
-  },
+    Header
+},
 };
 </script>
