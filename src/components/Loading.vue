@@ -10,6 +10,7 @@
         min-height: 60vh;
         display: flex;
         align-items: center;
+        justify-content: center;
     }
     .custom-loader {
         width:50px;

@@ -1,7 +1,7 @@
 <template>
   <header>
     <h1>
-      <router-link class="link" class-active="active" to="/">MOVIE LIST MANIA</router-link>
+      <router-link class="link" class-active="active" to="/">Movie List Mania</router-link>
     </h1>
     <div class="search-wrapper">
       <input type="text" placeholder="Enter the movie name ..." @change="push($event)" />
@@ -29,9 +29,11 @@ export default {
 </script>
 
 <style scoped>
+
 .link {
   text-decoration: none;
   color: white;
+  font-family: 'Poor Story', system-ui;
 }
 
 header {
