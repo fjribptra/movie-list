@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const baseUrl = 'https://api.themoviedb.org/3'
-const apiKey = 'c18932314685ccd2cc4221302a18e15b'
+const baseUrl = import.meta.env.VITE_VUE_APP_BASE_URL
+const apiKey = import.meta.env.VITE_VUE_APP_API_KEY
 
 export const getMovieList = async (page) => {
     const movie = await axios.get(`${baseUrl}/movie/popular?page=${page}&api_key=${apiKey}`)

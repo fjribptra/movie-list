@@ -37,8 +37,8 @@ export default {
 }
 
 header {
-  background-color: #011936;
   padding: 2em 4em;
+  background-color: #011936;
   display: flex;
   justify-content: space-between;
   align-items: center;
