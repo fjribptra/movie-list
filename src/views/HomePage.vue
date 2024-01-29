@@ -83,6 +83,10 @@ export default {
       z-index: 2;
     }
 
+    .bg-overlay p {
+      line-height: 25px;
+    }
+
     main h1 {
         font-size: 3rem;
     }
