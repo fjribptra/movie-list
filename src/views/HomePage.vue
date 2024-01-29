@@ -127,9 +127,9 @@ export default {
         main {
           padding-top: 150px;
         }
-
         .bg-overlay {
           padding: 2em;
+          gap: 45px;
         }
         .cta-button {
             width: 200px;

@@ -1,7 +1,7 @@
 <template>
   <header>
     <h1>
-      <router-link class="link" class-active="active" to="/">Movie List Mania</router-link>
+      <router-link class="link" class-active="active" to="/">MOVIE LIST MANIA</router-link>
     </h1>
     <div class="search-wrapper">
       <input type="text" placeholder="Enter the movie name ..." @change="push($event)" />
